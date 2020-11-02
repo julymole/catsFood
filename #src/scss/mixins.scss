@@ -1,0 +1,126 @@
+@mixin baground-img($size, $repeat, $position) {
+  background-size: $size;
+  background-repeat: $repeat;
+  background-position: $position;
+}
+
+@mixin txt($family, $size, $height, $weight, $color) {
+  font-family: $family, "arial", sans-serif;
+  font-size: $size;
+  line-height: $height;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin text-product {
+  font-family: "trebuchet", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 400;
+  color: #666666;
+}
+
+@mixin firaSans17 {
+  font-family: "firaSans", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 170%;
+  color: $color-txt;
+}
+
+@mixin title {
+  font-family: "montserrat", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 49px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: $color-title;
+}
+
+@mixin markerforli {
+  content: "";
+  display: block;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  padding-top: 7px;
+  box-sizing: border-box;
+  text-align: center;
+  color: #ffc341;
+}
+
+@mixin reviews-pagination {
+  display: flex;
+  width: 100px;
+  justify-content: space-between;
+  align-items: center;
+
+  span {
+    @include firaSans17;
+    opacity: 0.5;
+    letter-spacing: 5px;
+  }
+
+  a:nth-of-type(1) {
+    @include control;
+    transform: rotate(-135deg);
+    margin-right: -15px;
+
+    &:hover:nth-of-type(1) {
+      opacity: 1;
+    }
+  }
+
+  a:nth-of-type(2) {
+    @include control;
+    transform: rotate(45deg);
+
+    &:hover:nth-of-type(2) {
+      opacity: 1;
+    }
+  }
+}
+
+@mixin markerfordetails {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 38px;
+  position: absolute;
+  top: 18px;
+  left: 0;
+  font-family: "firaSans", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 170%;
+  background: linear-gradient(108.42deg, #ffc341 20.46%, #ffd701 65.31%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin btn {
+  height: 59px;
+  border: none;
+  background: linear-gradient(140.64deg, #ffc341 20.46%, #ffd701 65.31%);
+  border-radius: 80px;
+
+  @include firaSans17;
+  font-variant: small-caps;
+  color: $color-white;
+}
+
+@mixin control {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 0;
+  border: 2px solid #484848;
+  border-color: #484848 #484848 transparent transparent;
+  opacity: 0.2;
+}
